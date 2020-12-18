@@ -9,7 +9,7 @@ const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getProperties);
+    dispatch(getProperties());
   }, [dispatch]);
 
   return (
@@ -29,10 +29,10 @@ const App = () => {
             spacing={3}
           >
             <Grid item xs={12} sm={7}>
-              <PropertyListing />
+              <PropertyListing listType={"results"} />
             </Grid>
             <Grid item xs={12} sm={4}>
-              <h1>Saved Properties</h1>
+              <PropertyListing listType={"saved"} />
             </Grid>
           </Grid>
         </Container>

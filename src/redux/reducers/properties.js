@@ -1,9 +1,13 @@
 import { FETCH_ALL, ADD, REMOVE } from "../constants/actionTypes";
+import * as api from "../../api/property";
 
-const properties = (properties = [], action) => {
+const initState = api.FetchProperties();
+
+const properties = (properties = initState, action) => {
   switch (action.type) {
     case FETCH_ALL:
-      return action.payload; // data of properties
+      return properties;
+    //return action.payload; // data of properties
 
     case ADD:
       return [...properties, action.payload];
