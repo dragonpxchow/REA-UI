@@ -11,3 +11,25 @@ export const getProperties = () => async (dispatch) => {
     console.log({ message: error.message });
   }
 };
+
+export const addProperty = (property) => async (dispatch) => {
+  try {
+    // in real-time app, it should add to db
+    //console.log("addProperty >>>>>>>>>>>>>>>>", property);
+    const action = { type: ADD, payload: property };
+    dispatch(action);
+  } catch (error) {
+    console.log({ message: error.message });
+  }
+};
+
+export const removeProperty = (property) => async (dispatch) => {
+  try {
+    // in real-time app, it should remove from db
+    console.log("removeProperty >>>>>>>>>>>>>>>>", property);
+    const action = { type: REMOVE, payload: property };
+    dispatch(action);
+  } catch (error) {
+    console.log({ message: error.message });
+  }
+};

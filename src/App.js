@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 import PropertyListing from "./components/property/propertyListing";
 import { getProperties } from "./redux/actions/properties";
+import * as keyword from "./common/constants";
 import useStyles from "./styles/app.js";
 
 const App = () => {
@@ -28,11 +29,11 @@ const App = () => {
             alignItems="stretch"
             spacing={3}
           >
-            <Grid item xs={12} sm={7}>
-              <PropertyListing listType={"results"} />
+            <Grid item xs={12} sm={6}>
+              <PropertyListing listType={keyword.results} />
             </Grid>
-            <Grid item xs={12} sm={4}>
-              <PropertyListing listType={"saved"} />
+            <Grid item xs={12} sm={6}>
+              <PropertyListing listType={keyword.saved} />
             </Grid>
           </Grid>
         </Container>

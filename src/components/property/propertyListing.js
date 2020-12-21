@@ -1,15 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Grid, CircularProgress, Typography } from "@material-ui/core";
 import PropertyCard from "./propertyCard";
-import { Grid, CircularProgress } from "@material-ui/core";
 import useStyles from "../../styles/property/propertyListing";
+import * as keyword from "../../common/constants";
 
 const PropertyListing = ({ listType }) => {
   const classes = useStyles();
 
   //const { results, saved } = useSelector((state) => state.properties);
   const properties = useSelector((state) => {
-    return listType === "results"
+    return listType === keyword.results
       ? state.properties.results
       : state.properties.saved;
   });
@@ -21,13 +22,17 @@ const PropertyListing = ({ listType }) => {
   ) : (
     <Grid
       className={classes.container}
-      alignItems="stretch"
+      alignItems="center"
+      direction="column"
       container
-      spacing={3}
+      spacing={6}
     >
+      <Typography className={classes.heading} variant="h5" alig="center">
+        {listType === keyword.saved ? keyword.savedProperty : listType}
+      </Typography>
       {properties.map((property) => (
         <Grid key={property.id} item xm={12} sm={6}>
-          <PropertyCard property={property}></PropertyCard>
+          <PropertyCard property={property} listType={listType}></PropertyCard>
         </Grid>
       ))}
     </Grid>

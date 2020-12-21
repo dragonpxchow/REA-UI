@@ -10,10 +10,25 @@ const properties = (properties = initState, action) => {
     //return action.payload; // data of properties
 
     case ADD:
-      return [...properties, action.payload];
+      //console.log("addReducer ", action.payload);
+      //console.log("properties>>>>>", properties);
+      // return properties.results.filter(
+      //   (property) => property.id !== action.payload.id
+      //);
+      const savedProperties = [...properties.saved, action.payload];
+      //console.log("savedProperties", savedProperties);
+      properties.saved = savedProperties;
+      return properties;
 
     case REMOVE:
-      return properties; //.filter((post) => post._id !== action.payload);
+      console.log("removeReducer ", action.payload.id);
+      const removeProperties = properties.saved;
+      console.log("savedProperties", removeProperties);
+
+      properties.saved = removeProperties.filter(
+        (property) => property.id === action.payload.id
+      );
+      return properties;
 
     default:
       return properties;

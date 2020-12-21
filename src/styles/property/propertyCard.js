@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles({
+export default makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "60%",
@@ -49,4 +49,18 @@ export default makeStyles({
     display: "flex",
     justifyContent: "space-between",
   },
-});
+  small: {
+    width: "auto", //theme.spacing(20),
+    height: theme.spacing(5),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+  },
+  button: {
+    "&:hover": {
+      textDecoration: "underline",
+      textTransform: "none",
+    },
+  },
+}));
