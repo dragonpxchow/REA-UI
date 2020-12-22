@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   mainContainer: {
     display: "flex",
-    alignItems: "center",
   },
   heading: {
     color: "black",
@@ -19,5 +18,8 @@ export default makeStyles((theme) => ({
     "&:hover": {
       background: "blue",
     },
+  },
+  addShoppingCartIcon: {
+    fontSize: 50,
   },
 }));

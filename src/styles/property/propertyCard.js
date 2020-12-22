@@ -21,46 +21,16 @@ export default makeStyles((theme) => ({
     height: "100%",
     position: "relative",
   },
-  overlay: {
-    position: "absolute",
-    top: "20px",
-    left: "20px",
-    color: "white",
-  },
-  overlay2: {
-    position: "absolute",
-    top: "20px",
-    right: "20px",
-    color: "white",
-  },
   grid: {
     display: "flex",
   },
-  details: {
-    display: "flex",
-    justifyContent: "space-between",
-    margin: "20px",
-  },
+
   title: {
     padding: "0 16px",
   },
-  cardActions: {
-    padding: "0 16px 8px 16px",
-    display: "flex",
-    justifyContent: "space-between",
-  },
+
   small: {
-    width: "auto", //theme.spacing(20),
+    width: "auto",
     height: theme.spacing(5),
-  },
-  large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
-  },
-  button: {
-    "&:hover": {
-      textDecoration: "underline",
-      textTransform: "none",
-    },
   },
 }));

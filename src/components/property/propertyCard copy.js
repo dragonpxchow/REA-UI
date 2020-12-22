@@ -7,7 +7,7 @@ import {
   CardContent,
   Typography,
   Avatar,
-  Chip,
+  Button,
 } from "@material-ui/core";
 import * as keyword from "../../common/constants";
 import { addProperty, removeProperty } from "../../redux/actions/properties";
@@ -34,21 +34,12 @@ const PropertyCard = ({ property, listType }) => {
           />
         }
       ></CardHeader>
-      <CardMedia
-        className={classes.media}
-        image={property.mainImage}
-      ></CardMedia>
 
       {show && (
-        <Chip
-          variant="outlined"
+        <Button
+          variant="contained"
           color="primary"
-          avatar={<Avatar>{listType === keyword.results ? "+" : "-"}</Avatar>}
-          label={
-            listType === keyword.results
-              ? keyword.addProperty
-              : keyword.removeProperty
-          }
+          className={classes.button}
           onClick={() => {
             if (listType === keyword.results) {
               dispatch(addProperty(property));
@@ -56,8 +47,16 @@ const PropertyCard = ({ property, listType }) => {
               dispatch(removeProperty(property));
             }
           }}
-        ></Chip>
+        >
+          {listType === keyword.results
+            ? keyword.addProperty
+            : keyword.removeProperty}
+        </Button>
       )}
+      <CardMedia
+        className={classes.media}
+        image={property.mainImage}
+      ></CardMedia>
       <CardContent>
         <Typography className={classes.title} variant="h5" gutterBottom>
           Price: {property.price}
