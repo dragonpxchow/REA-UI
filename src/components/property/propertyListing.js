@@ -6,6 +6,7 @@ import PropertyCard from "./propertyCard";
 import useStyles from "../../styles/property/propertyListing";
 import * as keyword from "../../common/constants";
 
+// list properties depending on listType (either results or saved) in column grid
 const PropertyListing = ({ listType }) => {
   const classes = useStyles();
 
@@ -16,6 +17,7 @@ const PropertyListing = ({ listType }) => {
   });
 
   return !properties.length ? (
+    // show AddShoppingCartIcon if no single property listed
     <Tooltip
       title="Please add property from the property list"
       arrow

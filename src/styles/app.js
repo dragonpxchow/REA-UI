@@ -10,11 +10,9 @@ export default makeStyles((theme) => ({
     alignItems: "center",
   },
   heading: {
-    color: "rgba(0,183,255, 1)",
+    color: "primary",
   },
-  image: {
-    marginLeft: "15px",
-  },
+
   [theme.breakpoints.down("sm")]: {
     mainContainer: {
       flexDirection: "column-reverse",

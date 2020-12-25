@@ -3,7 +3,7 @@ import { FETCH_ALL, ADD, REMOVE } from "../constants/actionTypes";
 
 export const getProperties = () => async (dispatch) => {
   try {
-    //fetch all properties
+    // fetch all propertie s
     const data = await api.FetchProperties();
     const action = { type: FETCH_ALL, payload: data };
     dispatch(action);

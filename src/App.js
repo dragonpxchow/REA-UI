@@ -8,15 +8,20 @@ import useStyles from "./styles/app.js";
 
 const App = () => {
   const classes = useStyles();
+
   const dispatch = useDispatch();
   useEffect(() => {
+    // fecth all properties
     dispatch(getProperties());
   }, [dispatch]);
 
   return (
+    // reponsive grid is used to support various width of device
+    // the left grid item constains results properties
+    // the right grid item constains saved properties
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" alig="center">
+        <Typography className={classes.heading} variant="h3" alig="center">
           REA Properties
         </Typography>
       </AppBar>

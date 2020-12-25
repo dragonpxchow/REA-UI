@@ -6,7 +6,7 @@ const initState = api.FetchProperties();
 const properties = (properties = initState, action) => {
   switch (action.type) {
     case FETCH_ALL:
-      // fecth all properties
+      // return all properties
       return properties;
 
     case ADD:

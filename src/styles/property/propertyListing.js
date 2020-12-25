@@ -7,18 +7,6 @@ export default makeStyles((theme) => ({
   heading: {
     color: "black",
   },
-  smMargin: {
-    margin: theme.spacing(1),
-  },
-  actionDiv: {
-    textAlign: "center",
-  },
-  button: {
-    fontSize: 12,
-    "&:hover": {
-      background: "blue",
-    },
-  },
   addShoppingCartIcon: {
     fontSize: 50,
   },

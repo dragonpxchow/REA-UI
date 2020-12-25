@@ -4,15 +4,8 @@ export default makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "60%",
-    // backgroundColor: "rgba(0, 0, 0, 0.5)",
-    // backgroundBlendMode: "darken",
   },
-  border: {
-    border: "solid",
-  },
-  fullHeightCard: {
-    height: "100%",
-  },
+
   card: {
     display: "flex",
     flexDirection: "column",
@@ -20,9 +13,6 @@ export default makeStyles((theme) => ({
     borderRadius: "15px",
     height: "100%",
     position: "relative",
-  },
-  grid: {
-    display: "flex",
   },
 
   title: {
@@ -32,5 +22,15 @@ export default makeStyles((theme) => ({
   small: {
     width: "auto",
     height: theme.spacing(5),
+  },
+
+  popover: {
+    pointerEvents: "none",
+  },
+
+  paper: {
+    padding: theme.spacing(1),
+    borderRadius: "15px",
+    width: "auto",
   },
 }));
